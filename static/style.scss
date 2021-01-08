@@ -1,5 +1,33 @@
-$background: #f5f5f5;
+$primary: #2d2d2d;
+$secondary: #d2d2d2;
 
-body {
-  background: $background;
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
+@import "../node_modules/bulma/sass/components/card.sass";
+@import "../node_modules/bulma/sass/components/menu.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/components/tabs.sass";
+@import "../node_modules/bulma/sass/grid/tiles.sass";
+
+.has-text-white {
+  color: $white !important;
+}
+
+@media (max-width: 1023px) {
+  .navbar-menu {
+    background: $dark;
+  }
+
+  .navbar-item .button.is-outlined {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid white;
+  }
+
+  .navbar-item {
+    padding: 0 0;
+
+  }
 }
