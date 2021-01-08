@@ -1,12 +1,11 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/5ba03ba7-ff8b-4c54-94e7-cd5fd76a6737/deploy-status)](https://app.netlify.com/sites/yew-todomvc/deploys)
-
+[![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dani97/yew-portfolio/tree/master)
 ## About
 
 This template shows how to create a web app using Yew and wasm-pack. 
 
 ## 🚴 Usage
 
-### 🛠️ Build
+### 🛠️ Build)
 
 When building for the first time, ensure to install dependencies first.
 

@@ -1,0 +1,7 @@
+spec:
+  name: yew-portfolio
+  static_sites:
+    - git:
+        branch: master
+        repo_clone_url: https://github.com/dani97/yew-portfolio.git
+      name: yew-portfolio
