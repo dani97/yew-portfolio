@@ -16,6 +16,8 @@ wasm-logger = "0.2"
 wee_alloc = "0.4.5"
 yew = "0.17"
 ybc = "0.1"
+yew-router = "0.14"
+yewtil = "0.3"
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3"
@@ -23,5 +25,11 @@ wasm-bindgen-test = "0.3"
 [dependencies.web-sys]
 version = "0.3.4"
 features = [
-  'KeyboardEvent',
+  "Document",
+  "DomStringMap",
+  "Element",
+  "Location",
+  "HtmlElement",
+  "Storage",
+  "Window"
 ]

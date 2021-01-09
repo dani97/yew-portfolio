@@ -1,5 +1,3 @@
-$primary: #2d2d2d;
-$secondary: #d2d2d2;
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
@@ -13,21 +11,4 @@ $secondary: #d2d2d2;
 
 .has-text-white {
   color: $white !important;
-}
-
-@media (max-width: 1023px) {
-  .navbar-menu {
-    background: $dark;
-  }
-
-  .navbar-item .button.is-outlined {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid white;
-  }
-
-  .navbar-item {
-    padding: 0 0;
-
-  }
 }

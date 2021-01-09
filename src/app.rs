@@ -1,5 +1,16 @@
 use ybc::TileCtx::{Ancestor, Child, Parent};
 use yew::prelude::*;
+use yew_router::{
+    agent::{RouteAgent, RouteRequest},
+    route::Route,
+};
+use crate::{
+    AppRoute, RouterAnchor, RouterButton,
+    pages::{
+        about::About, contact::Contact, home::Home, post::Post,
+        post_list::PostList, work::Work
+    }
+};
 
 pub struct App;
 
@@ -20,6 +31,16 @@ impl Component for App {
     }
 
     fn view(&self) -> Html {
+        type Router = yew_router::router::Router<AppRoute>;
+        let render_route = Router::render(move |route| match route {
+            AppRoute::PostList => html! { <PostList/>},
+            AppRoute::About => html! { <About /> },
+            AppRoute::Home => html! { <Home/> },
+            AppRoute::Contact => html! { <Contact/> },
+            AppRoute::Work => html! { <Work/>}
+        });
+
+
         html! {
             <>
             <ybc::Navbar
@@ -34,58 +55,34 @@ impl Component for App {
                 navend=html!{
                     <>
                     <ybc::NavbarItem>
-                        <ybc::ButtonAnchor classes="is-white is-outlined" rel="noopener noreferrer" target="_blank" href="https://github.com/thedodd/trunk">
-                            {"Trunk"}
-                        </ybc::ButtonAnchor>
+                        <RouterAnchor route=AppRoute::About>
+                            { "About" }
+                        </RouterAnchor>
                     </ybc::NavbarItem>
                     <ybc::NavbarItem>
-                        <ybc::ButtonAnchor classes="is-white is-outlined" rel="noopener noreferrer" target="_blank" href="https://yew.rs">
-                            {"Yew"}
-                        </ybc::ButtonAnchor>
+                        <RouterAnchor route=AppRoute::Contact>
+                            { "Contact" }
+                        </RouterAnchor>
                     </ybc::NavbarItem>
                     <ybc::NavbarItem>
-                        <ybc::ButtonAnchor classes="is-white is-outlined" rel="noopener noreferrer" target="_blank" href="https://github.com/thedodd/ybc">
-                            {"YBC"}
-                        </ybc::ButtonAnchor>
+                        <RouterAnchor route=AppRoute::PostList>
+                            { "Blog" }
+                        </RouterAnchor>
+                    </ybc::NavbarItem>
+                    <ybc::NavbarItem>
+                        <RouterAnchor route=AppRoute::Work>
+                            { "Work" }
+                        </RouterAnchor>
                     </ybc::NavbarItem>
                     </>
                 }
             />
-
-            <ybc::Hero
-                classes="is-dark"
-                size=ybc::HeroSize::FullheightWithNavbar
-                body=html!{
-                    <ybc::Container classes="is-centered">
-                    <ybc::Tile ctx=Ancestor>
-                        <ybc::Tile ctx=Parent size=ybc::TileSize::Twelve>
-                            <ybc::Tile ctx=Parent>
-                                <ybc::Tile ctx=Child classes="notification is-primary">
-                                    <ybc::Subtitle size=ybc::HeaderSize::Is3 classes="has-text-white">{"Trunk"}</ybc::Subtitle>
-                                    <p>{"Trunk is a WASM web application bundler for Rust."}</p>
-                                </ybc::Tile>
-                            </ybc::Tile>
-                            <ybc::Tile ctx=Parent>
-                                <ybc::Tile ctx=Child classes="notification is-primary">
-                                    <ybc::Icon size=ybc::Size::Large classes="is-pulled-right"><img src="yew.svg"/></ybc::Icon>
-                                    <ybc::Subtitle size=ybc::HeaderSize::Is3 classes="has-text-white">
-                                        {"Yew"}
-                                    </ybc::Subtitle>
-                                    <p>{"Yew is a modern Rust framework for creating multi-threaded front-end web apps with WebAssembly."}</p>
-                                </ybc::Tile>
-                            </ybc::Tile>
-                            <ybc::Tile ctx=Parent>
-                                <ybc::Tile ctx=Child classes="notification is-primary">
-                                    <ybc::Subtitle size=ybc::HeaderSize::Is3 classes="has-text-white">{"YBC"}</ybc::Subtitle>
-                                    <p>{"A Yew component library based on the Bulma CSS framework."}</p>
-                                </ybc::Tile>
-                            </ybc::Tile>
-                        </ybc::Tile>
-                    </ybc::Tile>
-                    </ybc::Container>
-                }>
-            </ybc::Hero>
+            <main>
+                <Router render=render_route />
+            </main>
             </>
         }
     }
 }
+
+
