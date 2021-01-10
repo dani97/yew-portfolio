@@ -9,14 +9,10 @@ use yew_router::{prelude::*};
 
 #[derive(Clone, Debug, Switch)]
 pub enum AppRoute {
-    #[to = "/posts/"]
-    PostList,
+    #[to = "/skills/"]
+    Skills,
     #[to = "/work/"]
     Work,
-    #[to = "/contact/"]
-    Contact,
-    #[to = "/about/"]
-    About,
     #[to = "/!"]
     Home
 }

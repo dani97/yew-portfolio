@@ -1,8 +1,11 @@
 [package]
 name = "yew-wasm-pack-template"
 version = "0.2.0"
-authors = ["Yew Maintainers <maintainers@yew.rs"]
+authors = ["Christopher Daniel <chris.daniel@hey.com>"]
 edition = "2018"
+description = "Christopher Daniel Portfolio"
+repository = "https://github.com/dani97/yew-portfolio"
+license = "MIT"
 
 [lib]
 crate-type = ["cdylib", "rlib"]

@@ -1,13 +1,21 @@
 $primary: #4b3293;
 $secondary: #363636;
+
 @import "../node_modules/bulma/bulma.sass";
 html, body {
   height: 100%;
 }
 
+
 body {
   background: $secondary url("./varya-lapina-rVO882XRWcA-unsplash.jpg") center;
   margin: 0;
+}
+
+@media screen and (max-width: 769px) {
+  body {
+    background: $secondary url("./varya-lapina-rVO882XRWcA-unsplash-mobile.jpg") center;
+  }
 }
 
 .has-text-white {
@@ -40,6 +48,9 @@ a {
 
 .card {
   background: $primary;
+  + .card {
+    margin-left: $column-gap;
+  }
 }
 
 .floating-container {
@@ -47,4 +58,9 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.is-highlighted {
+  font-weight: bolder;
+  color: #00ffff;
 }

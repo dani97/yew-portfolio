@@ -24,7 +24,11 @@ impl Component for Home {
             <div class="card">
                 <div class="card-image">
                     <figure class="image is-3by3">
-                        <img src="https://avatars2.githubusercontent.com/u/13298685?s=200" alt="Profile picture"/>
+                        <img srcset="https://avatars2.githubusercontent.com/u/13298685?100 768w,\
+                        https://avatars2.githubusercontent.com/u/13298685?200 1024w"
+                        sizes="(max-width: 768px) 768px,\
+                        1024px"
+                        src="https://avatars2.githubusercontent.com/u/13298685" alt="Profile picture"/>
                     </figure>
                 </div>
                 <div class="card-content">
@@ -36,6 +40,38 @@ impl Component for Home {
                             <li>{ "Working on Magento, Headless, APIs"} </li>
                             <li>{ "Cycling, Reading on free time"} </li>
                         </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-footer-item">
+                        <a href="https://github.com/dani97/"  target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-github-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="card-footer-item">
+                        <a href="https://twitter.com/chrisdani3l"  target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="card-footer-item">
+                        <a href="https://www.linkedin.com/in/christopher-daniel-35206aa3"  target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="card-footer-item">
+                        <a href="https://www.hackerrank.com/Danie1" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-code fa-2x"  aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="card-footer-item">
+                        <a href="mailto: chris.daniel@hey.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-envelope fa-2x"  aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="card-footer-item">
+                        <a href="https://dev.to/chris_daniel" target="_blank" rel="noopener noreferrer">
+                            <i class="fa fa-rss-square fa-2x"  aria-hidden="true"></i>
+                        </a>
                     </div>
                 </div>
             </div>

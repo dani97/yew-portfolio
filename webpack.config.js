@@ -31,7 +31,7 @@ module.exports = (env, argv) => {
         },
         {
             test: /\.jpe?g$|\.gif$|\.png$/i,
-            loader: "file-loader?name=/[name].[ext]"
+            loader: "file-loader?name=[name].[ext]"
         }
       ],
     },

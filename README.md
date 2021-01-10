@@ -1,9 +1,10 @@
 [![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/dani97/yew-portfolio/tree/master)
 ## About
 
-This template shows how to create a web app using Yew and wasm-pack. 
+My personal Portfolio built using Yew Framework.
 
-## 🚴 Usage
+### Note
+Since this is an static SPA, all routes other than index show 404, to overcome this, index.html is given as fallback and you have to edit base tag in index.html to your site base url
 
 ### 🛠️ Build)
 

@@ -2,8 +2,9 @@ use yew::prelude::*;
 use crate::{
     AppRoute, RouterButton, RouterAnchor,
     pages::{
-        about::About, contact::Contact, home::Home,
-        post_list::PostList, work::Work
+        home::Home,
+        work::Work,
+        skills::Skills
     }
 };
 
@@ -28,11 +29,9 @@ impl Component for App {
     fn view(&self) -> Html {
         type Router = yew_router::router::Router<AppRoute>;
         let render_route = Router::render(move |route| match route {
-            AppRoute::PostList => html! { <PostList/>},
-            AppRoute::About => html! { <About /> },
             AppRoute::Home => html! { <Home/> },
-            AppRoute::Contact => html! { <Contact/> },
-            AppRoute::Work => html! { <Work/>}
+            AppRoute::Work => html! { <Work/>},
+            AppRoute::Skills => html! { <Skills/>}
         });
 
 
@@ -45,8 +44,8 @@ impl Component for App {
                     navbrand=html!{
                         <ybc::NavbarItem>
                             <ybc::Title classes="has-text-white" size=ybc::HeaderSize::Is3>
-                            <RouterAnchor route=AppRoute::Home classes="has-white-text">
-                                {"Chris Daniel Portfolio"}
+                            <RouterAnchor route=AppRoute::Home classes="is-highlighted">
+                                {"Portfolio"}
                             </RouterAnchor>
                             </ybc::Title>
                         </ybc::NavbarItem>
@@ -55,18 +54,8 @@ impl Component for App {
                     navend=html!{
                         <>
                         <ybc::NavbarItem>
-                            <RouterButton classes="has-text-white nav-button" route=AppRoute::About>
-                                { "About" }
-                            </RouterButton>
-                        </ybc::NavbarItem>
-                        <ybc::NavbarItem>
-                            <RouterButton classes="has-text-white nav-button" route=AppRoute::Contact>
-                                { "Contact" }
-                            </RouterButton>
-                        </ybc::NavbarItem>
-                        <ybc::NavbarItem>
-                            <RouterButton classes="has-text-white nav-button" route=AppRoute::PostList>
-                                { "Blog" }
+                            <RouterButton classes="has-text-white nav-button" route=AppRoute::Skills>
+                                { "Skills" }
                             </RouterButton>
                         </ybc::NavbarItem>
                         <ybc::NavbarItem>
