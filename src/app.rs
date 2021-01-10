@@ -1,13 +1,8 @@
-use ybc::TileCtx::{Ancestor, Child, Parent};
 use yew::prelude::*;
-use yew_router::{
-    agent::{RouteAgent, RouteRequest},
-    route::Route,
-};
 use crate::{
-    AppRoute, RouterAnchor, RouterButton,
+    AppRoute, RouterButton, RouterAnchor,
     pages::{
-        about::About, contact::Contact, home::Home, post::Post,
+        about::About, contact::Contact, home::Home,
         post_list::PostList, work::Work
     }
 };
@@ -43,41 +38,47 @@ impl Component for App {
 
         html! {
             <>
-            <ybc::Navbar
-                classes="is-primary"
-                padded=true
-                navbrand=html!{
-                    <ybc::NavbarItem>
-                        <ybc::Title classes="has-text-white" size=ybc::HeaderSize::Is3>{"Chris Daniel Portfolio"}</ybc::Title>
-                    </ybc::NavbarItem>
-                }
-                navstart=html!{}
-                navend=html!{
-                    <>
-                    <ybc::NavbarItem>
-                        <RouterAnchor route=AppRoute::About>
-                            { "About" }
-                        </RouterAnchor>
-                    </ybc::NavbarItem>
-                    <ybc::NavbarItem>
-                        <RouterAnchor route=AppRoute::Contact>
-                            { "Contact" }
-                        </RouterAnchor>
-                    </ybc::NavbarItem>
-                    <ybc::NavbarItem>
-                        <RouterAnchor route=AppRoute::PostList>
-                            { "Blog" }
-                        </RouterAnchor>
-                    </ybc::NavbarItem>
-                    <ybc::NavbarItem>
-                        <RouterAnchor route=AppRoute::Work>
-                            { "Work" }
-                        </RouterAnchor>
-                    </ybc::NavbarItem>
-                    </>
-                }
-            />
-            <main>
+            <header>
+                <ybc::Navbar
+                    classes="is-primary"
+                    padded=true
+                    navbrand=html!{
+                        <ybc::NavbarItem>
+                            <ybc::Title classes="has-text-white" size=ybc::HeaderSize::Is3>
+                            <RouterAnchor route=AppRoute::Home classes="has-white-text">
+                                {"Chris Daniel Portfolio"}
+                            </RouterAnchor>
+                            </ybc::Title>
+                        </ybc::NavbarItem>
+                    }
+                    navstart=html!{}
+                    navend=html!{
+                        <>
+                        <ybc::NavbarItem>
+                            <RouterButton classes="has-text-white nav-button" route=AppRoute::About>
+                                { "About" }
+                            </RouterButton>
+                        </ybc::NavbarItem>
+                        <ybc::NavbarItem>
+                            <RouterButton classes="has-text-white nav-button" route=AppRoute::Contact>
+                                { "Contact" }
+                            </RouterButton>
+                        </ybc::NavbarItem>
+                        <ybc::NavbarItem>
+                            <RouterButton classes="has-text-white nav-button" route=AppRoute::PostList>
+                                { "Blog" }
+                            </RouterButton>
+                        </ybc::NavbarItem>
+                        <ybc::NavbarItem>
+                            <RouterButton classes="has-text-white nav-button" route=AppRoute::Work>
+                                { "Work" }
+                            </RouterButton>
+                        </ybc::NavbarItem>
+                        </>
+                    }
+                />
+            </header>
+            <main class="main">
                 <Router render=render_route />
             </main>
             </>

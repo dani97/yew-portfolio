@@ -1,7 +1,7 @@
 use yew::prelude::*;
-use ybc::TileCtx::{Ancestor, Child, Parent};
 
 pub struct Home;
+
 impl Component for Home {
     type Message = ();
     type Properties = ();
@@ -19,40 +19,27 @@ impl Component for Home {
     }
 
     fn view(&self) -> Html {
-        html! (
-            <ybc::Hero
-                classes="is-dark"
-                size=ybc::HeroSize::FullheightWithNavbar
-                body=html!{
-                <ybc::Container classes="is-centered">
-                    <ybc::Tile ctx=Ancestor>
-                        <ybc::Tile ctx=Parent size=ybc::TileSize::Twelve>
-                            <ybc::Tile ctx=Parent>
-                                <ybc::Tile ctx=Child classes="notification is-primary">
-                                    <ybc::Subtitle size=ybc::HeaderSize::Is3 classes="has-text-white">{"Trunk"}</ybc::Subtitle>
-                                    <p>{"Trunk is a WASM web application bundler for Rust."}</p>
-                                </ybc::Tile>
-                            </ybc::Tile>
-                            <ybc::Tile ctx=Parent>
-                                <ybc::Tile ctx=Child classes="notification is-primary">
-                                    <ybc::Icon size=ybc::Size::Large classes="is-pulled-right"><img src="yew.svg"/></ybc::Icon>
-                                    <ybc::Subtitle size=ybc::HeaderSize::Is3 classes="has-text-white">
-                                        {"Yew"}
-                                    </ybc::Subtitle>
-                                    <p>{"Yew is a modern Rust framework for creating multi-threaded front-end web apps with WebAssembly."}</p>
-                                </ybc::Tile>
-                            </ybc::Tile>
-                            <ybc::Tile ctx=Parent>
-                                <ybc::Tile ctx=Child classes="notification is-primary">
-                                    <ybc::Subtitle size=ybc::HeaderSize::Is3 classes="has-text-white">{"YBC"}</ybc::Subtitle>
-                                    <p>{"A Yew component library based on the Bulma CSS framework."}</p>
-                                </ybc::Tile>
-                            </ybc::Tile>
-                        </ybc::Tile>
-                    </ybc::Tile>
-                </ybc::Container>
-            }>
-            </ybc::Hero>
+        html!(
+        <section class="floating-container">
+            <div class="card">
+                <div class="card-image">
+                    <figure class="image is-3by3">
+                        <img src="https://avatars2.githubusercontent.com/u/13298685?s=200" alt="Profile picture"/>
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="media-content has-text-white">
+                        <ul>
+                            <li>{ "Full Stack Developer"} </li>
+                            <li>{ "Open Source Lover"} </li>
+                            <li>{ "Curious, Passionate, often stupid, lazy"} </li>
+                            <li>{ "Working on Magento, Headless, APIs"} </li>
+                            <li>{ "Cycling, Reading on free time"} </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
         )
     }
 }

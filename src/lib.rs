@@ -5,7 +5,7 @@ mod pages;
 mod components;
 
 use wasm_bindgen::prelude::*;
-use yew_router::{prelude::*, switch::Permissive};
+use yew_router::{prelude::*};
 
 #[derive(Clone, Debug, Switch)]
 pub enum AppRoute {

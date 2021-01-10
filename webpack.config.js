@@ -29,6 +29,10 @@ module.exports = (env, argv) => {
             'sass-loader',
           ],
         },
+        {
+            test: /\.jpe?g$|\.gif$|\.png$/i,
+            loader: "file-loader?name=/[name].[ext]"
+        }
       ],
     },
     plugins: [
