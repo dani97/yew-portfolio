@@ -1,0 +1,12 @@
+name: yew-portfolio
+region: fra
+static_sites:
+- catchall_document: index.html
+  dockerfile_path: Dockerfile
+  github:
+    branch: master
+    repo: dani97/yew-portfolio
+  name: yew-portfolio
+  output_dir: /dist
+  routes:
+  - path: /
