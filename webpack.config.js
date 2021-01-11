@@ -1,6 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
 const distPath = path.resolve(__dirname, "dist");
 module.exports = (env, argv) => {
@@ -36,9 +39,17 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
+      new webpack.DefinePlugin({
+        'process.env.baseurl': JSON.stringify(dotenv.parsed.baseurl),
+        'process.env.gtmId': JSON.stringify(dotenv.parsed.gtmId)
+      }),
       new CopyWebpackPlugin([
         { from: './static', to: distPath }
       ]),
+      new HtmlWebpackPlugin({
+        template: "index.html",
+        filename: distPath + "/index.html"
+      }),
       new WasmPackPlugin({
         crateDirectory: ".",
         extraArgs: "--no-typescript",

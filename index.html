@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Christopher Daniel Portfolio Website">
+    <meta name="keywords" content="chrisdaniel.dev, chrisdaniel, Christopher Daniel, Christopher Daniel Portfolio,portfolio, personal website">
+    <meta name="author" content="Christopher Daniel">
+    <title>Christopher Daniel Portfolio</title>
+    <base href="<%= process.env.baseurl %>">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= process.env.gtmId %>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '<%= process.env.gtmId %>');
+    </script>
+    <!-- Global site tag End -->
+    <link rel="preload" as="image" href="https://avatars2.githubusercontent.com/u/13298685"
+          imagesrcset="https://avatars2.githubusercontent.com/u/13298685?100 768w, https://avatars2.githubusercontent.com/u/13298685?100 1024w"
+          imagesizes="(max-width: 768px) 768px, 1024px"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<script src="/portfolio.js"></script>
+</body>
+</html>
