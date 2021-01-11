@@ -5,6 +5,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
+let envVars = {}
+try {
+  envVars = {
+    'process.env.baseurl': JSON.stringify(dotenv.parsed.baseurl),
+      'process.env.gtmId': JSON.stringify(dotenv.parsed.gtmId)
+  }
+} catch (e) {
+  envVars = process.env
+}
+
 const distPath = path.resolve(__dirname, "dist");
 module.exports = (env, argv) => {
   return {
@@ -39,10 +49,7 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
-      new webpack.DefinePlugin({
-        'process.env.baseurl': JSON.stringify(dotenv.parsed.baseurl),
-        'process.env.gtmId': JSON.stringify(dotenv.parsed.gtmId)
-      }),
+      new webpack.DefinePlugin(envVars),
       new CopyWebpackPlugin([
         { from: './static', to: distPath }
       ]),
