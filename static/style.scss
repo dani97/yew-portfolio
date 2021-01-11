@@ -3,13 +3,15 @@ $secondary: #363636;
 
 @import "../node_modules/bulma/bulma.sass";
 html, body {
-  height: 100%;
+  min-height: 100vh;
 }
 
 
 body {
   background: $secondary url("./varya-lapina-rVO882XRWcA-unsplash.jpg") center;
   margin: 0;
+  background-size: cover;
+  background-repeat: repeat;
 }
 
 @media screen and (max-width: 769px) {
@@ -48,16 +50,42 @@ a {
 
 .card {
   background: $primary;
-  + .card {
-    margin-left: $column-gap;
+}
+
+.skills.floating-container.columns {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 0.75rem;
+  grid-template-areas: "1fr 1fr 1fr"
+  "1fr 1fr 1fr"
+  "1fr 1fr 1fr";
+  padding: 0 10%;
+
+  .has-max-height {
+    min-height: 20vh;
   }
 }
 
 .floating-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  padding: 30vh 40vw;
+}
+
+@media screen and (max-width: 769px) {
+  .skills.floating-container.columns {
+    grid-template-columns: 1fr;
+    grid-gap: 0.75rem;
+    grid-template-areas: none;
+    padding: 0 10%;
+
+    .has-max-height {
+      min-height: 5vh;
+    }
+  }
+
+  .floating-container {
+    padding: 25vh 10vw;
+  }
 }
 
 .is-highlighted {

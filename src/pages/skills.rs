@@ -20,7 +20,10 @@ impl Component for Skills {
 
     fn view(&self) -> Html {
         html!(
-        <section class=" columns floating-container">
+        <section class="skills columns floating-container">
+            <div class="has-max-height"></div>
+            <div class="has-max-height"></div>
+            <div class="has-max-height"></div>
             <div class="column card">
                 <div class="card-header">
                     <h3 class="card-header-title has-text-white">{"Frontend"}</h3>
@@ -139,6 +142,9 @@ impl Component for Skills {
                     </div>
                 </div>
             </div>
+            <div class="has-max-height"></div>
+            <div class="has-max-height"></div>
+            <div class="has-max-height"></div>
         </section>
         )
     }
