@@ -50,7 +50,7 @@ impl Component for Work {
                                     { "Next Storefront. " }
                                 </a>
                                 {"Demo "}
-                                <a href="https:/next-storefront.now.sh/" class="is-highlighted" target="_blank" rel="noopener noreferrer">
+                                <a href="https://next-storefront.now.sh/" class="is-highlighted" target="_blank" rel="noopener noreferrer">
                                     { "here" }
                                 </a>
                             </li>
